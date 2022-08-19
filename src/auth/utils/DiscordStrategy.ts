@@ -9,7 +9,7 @@ export class DiscordStrategy extends PassportStrategy(Strategy) {
     super({
       clientID: '978310811443404820',
       clientSecret: '7neu8thuRd1-Sq59NUm-O-ydjpf5r529',
-      callbackURL: 'http://localhost:4000/api/auth/redirect',
+      callbackURL: 'http://api.britsov.uk/api/auth/redirect',
       scope: ['identify'],
       passReqToCallback: true,
     });

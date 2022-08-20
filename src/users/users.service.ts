@@ -47,7 +47,7 @@ export class UsersService implements IUserService {
           return;
         }
 
-        const robloxUserGroupRank = robloxUserGroup.role.name.slice(1, 4);
+        const robloxUserGroupRank = robloxUserGroup.role.name.slice(1, 5);
         const robloxUserGroupRankName = robloxUserGroup.role.name.slice(
           6,
           robloxUserGroup.role.name.length,

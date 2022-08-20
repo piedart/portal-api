@@ -46,22 +46,12 @@ export class UsersService implements IUserService {
           });
           return;
         }
-        let robloxUserGroupRank;
-        let robloxUserGroupRankName;
 
-        if (robloxUserGroup.role.name.length > 6) {
-          robloxUserGroupRank = robloxUserGroup.role.name.slice(0, 6);
-          robloxUserGroupRankName = robloxUserGroup.role.name.slice(
-            7,
-            robloxUserGroup.role.name.length,
-          );
-        } else {
-          robloxUserGroupRank = robloxUserGroup.role.name.slice(0, 5);
-          robloxUserGroupRankName = robloxUserGroup.role.name.slice(
-            6,
-            robloxUserGroup.role.name.length,
-          );
-        }
+        const robloxUserGroupRank = robloxUserGroup.role.name.slice(1, 4);
+        const robloxUserGroupRankName = robloxUserGroup.role.name.slice(
+          6,
+          robloxUserGroup.role.name.length,
+        );
 
         console.log(robloxUserGroupRank);
 
@@ -76,23 +66,23 @@ export class UsersService implements IUserService {
             Number(robloxUserGroupRank[4] > 4) &&
             Number(robloxUserGroupRank[4] < 8)
           )
-            permissionLevel = 2;
+            permissionLevel = 3;
           else if (
             Number(robloxUserGroupRank[4] > 7) &&
             Number(robloxUserGroupRank[4] < 10)
           )
-            permissionLevel = 3;
+            permissionLevel = 4;
         } else if (robloxUserGroupRank.startsWith('[OF')) {
           if (
             Number(robloxUserGroupRank[4]) < 5 &&
             Number(robloxUserGroupRank[4] > 0)
           )
-            permissionLevel = 4;
+            permissionLevel = 5;
           else if (
             Number(robloxUserGroupRank[4] > 5) &&
             Number(robloxUserGroupRank[4] < 11)
           )
-            permissionLevel = 5;
+            permissionLevel = 6;
         }
 
         console.log(robloxUser);

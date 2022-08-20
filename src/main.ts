@@ -16,6 +16,7 @@ async function bootstrap() {
       saveUninitialized: false,
       cookie: {
         maxAge: 1000 * 60 * 60 * 24,
+        domain: 'britsov.uk',
       },
       store: MongoStore.create({
         mongoUrl: process.env.MONGO_CONNECTION_URL,
